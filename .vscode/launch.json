@@ -1,0 +1,18 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "Debug SST Start",
+			"type": "node",
+			"request": "launch",
+			"runtimeExecutable": "${workspaceRoot}/node_modules/.bin/sst",
+			"runtimeArgs": ["start", "--increase-timeout"],
+			"console": "integratedTerminal",
+			"skipFiles": ["<node_internals>/**"],
+			"env": {
+				"AWS_PROFILE": "workshop",
+				"AWS_REGION": "eu-central-1"
+			}
+		}
+	]
+}

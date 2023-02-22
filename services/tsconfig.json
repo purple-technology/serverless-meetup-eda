@@ -1,0 +1,13 @@
+{
+	"extends": "../tsconfig.json",
+	"include": ["**/*"],
+	"exclude": [],
+	"compilerOptions": {
+		"target": "es2022",
+		"moduleResolution": "node",
+		"lib": ["ES2022", "DOM"],
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": ".",
+		"strictNullChecks": true
+	}
+}
