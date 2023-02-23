@@ -2,6 +2,7 @@ import { DynamoDBClient, PutItemCommand } from '@aws-sdk/client-dynamodb'
 import { marshall } from '@aws-sdk/util-dynamodb'
 import type { Handler } from 'aws-lambda'
 import { isDepositInput } from 'deposit/src/types'
+import { isWithdrawalInput } from 'withdrawal/src/types'
 
 import { Event, RecentAction } from './types'
 
@@ -43,6 +44,8 @@ const parseRecentAction = (event: Event): RecentAction => {
 const parseClientId = (input: unknown): string => {
 	let clientId: string | undefined = undefined
 	if (isDepositInput(input)) {
+		clientId = input.clientId
+	} else if (isWithdrawalInput(input)) {
 		clientId = input.clientId
 	}
 

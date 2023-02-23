@@ -17,7 +17,7 @@ const schema: JSONSchemaType<Input> = {
 	required: ['amount', 'accountNumber', 'clientId']
 }
 
-export const isDepositInput = (input: unknown): input is Input => {
+export const isWithdrawalInput = (input: unknown): input is Input => {
 	const validate = ajv.compile(schema)
 	return validate(input)
 }
